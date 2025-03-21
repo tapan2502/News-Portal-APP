@@ -188,3 +188,12 @@ Where:
 - `q=tesla`: Searches for articles about Tesla
 - `from=YYYY-MM-DD`: Fetches articles from the specified date (automatically set to one month ago)
 - `sortBy=publishedAt`: Sorts articles by publication date (newest first)
+
+![image](https://github.com/user-attachments/assets/a0012aad-cf39-402f-943c-f83d00f95a59)
+![image](https://github.com/user-attachments/assets/c285c42e-d61c-4ea0-9a3e-d66f3f547af6)
+![image](https://github.com/user-attachments/assets/8652dd62-4abc-4758-8744-82ac1137dd9b)
+![image](https://github.com/user-attachments/assets/90537204-5f26-467b-ab46-a73d13815512)
+
+
+
+
