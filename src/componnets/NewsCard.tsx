@@ -2,7 +2,6 @@
 
 import type React from "react"
 
-import { useState } from "react"
 import { Card, CardContent, CardMedia, Typography, IconButton, Box, Avatar } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
 import type { NewsArticle } from "../types"
@@ -16,8 +15,6 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) => {
-  const [isHovered, setIsHovered] = useState(false)
-
   const handleRemove = (e: React.MouseEvent) => {
     e.stopPropagation()
     onRemove(article.url)
@@ -43,8 +40,6 @@ const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) 
           overflow: "visible",
           cursor: "pointer",
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         onClick={handleCardClick}
       >
         <CardContent sx={{ display: "flex", p: 3 }}>
@@ -121,8 +116,6 @@ const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) 
         },
         cursor: "pointer",
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
     >
       <Box sx={{ position: "relative" }}>
@@ -131,10 +124,7 @@ const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) 
           height="180"
           image={article.urlToImage || "/placeholder.svg?height=180&width=320"}
           alt={article.title}
-          sx={{
-            objectFit: "cover",
-            borderRadius: "12px 12px 0 0",
-          }}
+          sx={{ objectFit: "cover", borderRadius: "12px 12px 0 0" }}
         />
         <Box
           sx={{
@@ -202,18 +192,7 @@ const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) 
       <IconButton
         size="small"
         onClick={handleRemove}
-        sx={{
-          position: "absolute",
-          top: 10,
-          right: 10,
-          color: "#ff5252",
-          p: 0,
-          zIndex: 2,
-          bgcolor: "rgba(255,255,255,0.8)",
-          "&:hover": {
-            bgcolor: "rgba(255,255,255,1)",
-          },
-        }}
+        sx={{ position: "absolute", top: 10, right: 10, color: "#ff5252", p: 0, zIndex: 2, bgcolor: "rgba(255,255,255,0.8)", "&:hover": { bgcolor: "rgba(255,255,255,1)" } }}
       >
         <CloseIcon fontSize="small" />
       </IconButton>
@@ -222,4 +201,3 @@ const NewsCard = ({ article, variant, onRemove, onViewDetails }: NewsCardProps) 
 }
 
 export default NewsCard
-

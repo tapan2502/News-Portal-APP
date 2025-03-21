@@ -46,7 +46,7 @@ const NewsFeed = ({ viewType }: NewsFeedProps) => {
     setArticles(articles.filter((article) => article.url !== url))
   }
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+  const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
     setPage(value)
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -150,4 +150,3 @@ const NewsFeed = ({ viewType }: NewsFeedProps) => {
 }
 
 export default NewsFeed
-
